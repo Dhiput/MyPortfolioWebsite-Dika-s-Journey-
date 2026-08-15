@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andhika Putradhitya — Portfolio 2023–2026 | Content Marketing</title>
+
+<meta name="description" content="Interactive portfolio of Andhika Putradhitya — Brand Marketing Intern at MAP Active and Media Production graduate of Universitas Indonesia. Video, broadcast, design, game UI/UX, and short-form content you can play right on the page.">
+<meta name="author" content="Andhika Putradhitya">
+<meta name="keywords" content="Andhika Putradhitya, portfolio, content marketing, media production, MAP Active, OB Golf, Transvision, CubMu, MedEdu, TVUI, VARCO UI, UI Digitalk, Universitas Indonesia">
+<meta name="theme-color" content="#5872E4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andhika Putradhitya — Portfolio 2023–2026">
+<meta property="og:description" content="Content Marketing · Media Production · Brand Marketing Intern at MAP Active. Every work plays right on the page.">
+<meta property="og:image" content="assets/img/dhika.webp">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/dhika-sm.webp">
+<link rel="apple-touch-icon" href="assets/img/dhika-sm.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andhika Putradhitya",
+  "jobTitle": "Brand Marketing Intern · Content Marketing",
+  "worksFor": { "@type": "Organization", "name": "MAP Active" },
+  "email": "mailto:andhikaputradhitya@gmail.com",
+  "telephone": "+628119223634",
+  "address": { "@type": "PostalAddress", "addressLocality": "Pancoran Mas, Depok", "addressRegion": "West Java", "postalCode": "16433", "addressCountry": "ID" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Indonesia" },
+  "sameAs": ["https://www.linkedin.com/in/dhikadtya/", "https://www.instagram.com/dhikadtya", "https://www.tiktok.com/@mededu.id"],
+  "knowsAbout": ["Content Marketing","Content Planning","Video Editing","Art Direction","Graphic Design","Broadcast Production","Game UI/UX Design"]
+}
+</script>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ===== SECTION ARRIVAL ===== -->
+<!-- lapisan "ganti biome": kilatan warna singkat tiap kali masuk bab baru -->
+<div class="biome" id="biome" aria-hidden="true"></div>
+
+<!-- tirai untuk pergantian tema gelap/terang -->
+<div class="fade" id="fade" aria-hidden="true"></div>
+
+<!-- pulsa teleportasi saat berpindah bab lewat navigasi -->
+<div class="tp" id="tp" aria-hidden="true">
+  <span class="tp__ring"></span>
+  <span class="tp__ring tp__ring--2"></span>
+  <span class="tp__label" id="tpLabel"></span>
+</div>
+
+<div class="ann" id="ann" role="status" aria-live="polite">
+  <span class="ann__ring">
+    <svg width="32" height="32" viewBox="0 0 32 32"><circle class="bg" cx="16" cy="16" r="13"/><circle class="fg" cx="16" cy="16" r="13"/></svg>
+    <b id="annNo">01</b>
+  </span>
+  <span class="ann__txt">
+    <small>You’re now in</small>
+    <strong id="annName">About</strong>
+  </span>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="av"><img src="assets/img/dhika-sm.webp" alt="" width="34" height="34"></span>
+    <span>Dhika<small>Portfolio 23—26</small></span>
+  </a>
+
+  <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+    <span class="navpill" id="navpill" aria-hidden="true"></span>
+    <a href="#about"><span class="roll"><span data-t="About">About</span></span></a>
+    <a href="#experience"><span class="roll"><span data-t="Experience">Experience</span></span></a>
+    <a href="#works"><span class="roll"><span data-t="Works">Works</span></span></a>
+    <a href="#contact"><span class="roll"><span data-t="Contact">Contact</span></span></a>
+  </nav>
+
+  <div class="navside">
+    <a class="ico" id="cvA" href="#" target="_blank" rel="noopener" title="View CV" aria-label="View CV">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg>
+    </a>
+    <button class="ico" id="themeBtn" title="Switch theme" aria-label="Switch theme">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="ico burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mm" id="mm">
+  <a href="#about"><b>01</b>About</a>
+  <a href="#experience"><b>02</b>Experience</a>
+  <a href="#works"><b>03</b>Works</a>
+  <a href="#contact"><b>04</b>Contact</a>
+</div>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__top">
+      <div class="hero__tags">
+        <span class="eyebrow"><i></i> Open for opportunities</span>
+        <span class="eyebrow y">Portfolio 2023 — 2026</span>
+      </div>
+      <p class="ed" id="hook"></p>
+    </div>
+
+    <div class="hero__grid">
+      <div>
+        <h1>
+          <span class="l1">ANDHIKA</span>
+          <span class="l2">PUTRADHITYA<span class="dot">.</span></span>
+        </h1>
+
+        <div class="hero__role">
+          <span class="chip">Content Marketing</span>
+          <span>Brand Marketing Intern at <span class="mark">MAP Active</span></span>
+        </div>
+
+        <div class="hero__cta">
+          <a href="#works" class="btn btn--y">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Play the portfolio
+          </a>
+          <a href="#" id="cvB" target="_blank" rel="noopener" class="btn">View CV</a>
+          <button class="btn" id="shareBtn">Share</button>
+        </div>
+      </div>
+
+      <div class="shot">
+        <!-- Tiap elemen hias dibungkus .orb. Kotak .orb punya geometri yang
+             SAMA PERSIS dengan lingkaran biru, jadi memutar kotaknya membuat
+             isinya mengorbit tepat di sekeliling lingkaran itu. Pada keadaan
+             diam rotasinya 0, jadi komposisinya sama seperti sebelumnya. -->
+        <div class="shot__stage">
+          <span class="shot__circle" aria-hidden="true"></span>
+          <span class="orb orb--ring" aria-hidden="true"><span class="shot__ring"></span></span>
+          <img class="shot__img" src="assets/img/dhika.webp" alt="Portrait of Andhika Putradhitya" width="380" height="470" fetchpriority="high">
+          <span class="orb orb--tri" aria-hidden="true"><span class="shot__tri"></span></span>
+          <span class="orb orb--dot" aria-hidden="true"><span class="shot__dot"></span></span>
+        </div>
+        <div class="shot__caps" id="caps"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAT STRIP ===== -->
+<section style="padding-block: clamp(.5rem,2vw,1.5rem)">
+  <div class="wrap"><div class="strip rv" id="strip"></div></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about" data-no="01" data-name="About">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="no">01 — About</span>
+      <h2 class="h-sec">Hi, I’m <span class="sweep">Dhika</span><span class="b">.</span></h2>
+      <p class="note">Background, achievements, and the tools I reach for every day.</p>
+    </div>
+
+    <div class="about">
+      <div class="card a-sum rv">
+        <h3><span class="sq"></span>Summary</h3>
+        <p class="big" id="sumMain"></p>
+        <p class="ed" style="margin-top:1rem" id="sumSub"></p>
+      </div>
+
+      <div class="card a-edu rv d1">
+        <h3><span class="sq y"></span>Education</h3>
+        <div id="eduBox"></div>
+        <div class="subhead">Languages</div>
+        <div class="langs" id="langBox"></div>
+      </div>
+
+      <div class="card a-tools rv d2">
+        <h3><span class="sq"></span>Tools &amp; Proficiency</h3>
+        <div id="toolBox"></div>
+      </div>
+
+      <div class="card a-skill rv d3">
+        <h3><span class="sq y"></span>Skills</h3>
+        <div class="subhead">Technical</div>
+        <div class="chips" id="skTech"></div>
+        <div class="subhead">Social</div>
+        <div class="chips" id="skSocial"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="section section--tintB" id="experience" data-no="02" data-name="Experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="no">02 — Experience</span>
+      <h2 class="h-sec">Track <span class="sweep">Record</span></h2>
+      <p class="note">Six roles across four years. Use the arrows to move through them, then click a card to read the detail.</p>
+    </div>
+
+    <div class="xpc rv" id="xpc">
+      <button class="xpc__arw p" id="xpcP" aria-label="Previous experience">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="xpc__rail" id="xpcRail" tabindex="0" aria-label="Experience carousel"></div>
+      <button class="xpc__arw n" id="xpcN" aria-label="Next experience">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="xpc__dots" id="xpcDots" role="tablist" aria-label="Experience slides"></div>
+
+    <div class="spot rv" id="spot" style="margin-top: clamp(1.8rem,4vw,3rem)"></div>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section class="section" id="works" data-no="03" data-name="Works">
+  <!-- Hiasan ruang kosong, disebar dari awal Press Play sampai bawah.
+       Semuanya di belakang konten, tidak bisa diklik, dan samar.
+       Posisi & ukuran diatur lewat custom property: --t (top), --l / --r
+       (sisi), --s (ukuran). -->
+  <span class="wdec wd-ring"  style="--t:4%;  --r:4%;  --s:clamp(90px,11vw,155px)" aria-hidden="true"></span>
+  <span class="wdec wd-dot"   style="--t:11%; --l:3%;  --s:clamp(16px,2vw,26px)"   aria-hidden="true"></span>
+  <span class="wdec wd-cross" style="--t:19%; --r:6%;  --s:clamp(22px,2.4vw,34px)" aria-hidden="true"></span>
+  <span class="wdec wd-dots"  style="--t:27%; --l:2%;  --s:clamp(80px,9vw,130px)"  aria-hidden="true"></span>
+  <span class="wdec wd-sq"    style="--t:35%; --r:3%;  --s:clamp(26px,3vw,44px)"   aria-hidden="true"></span>
+  <span class="wdec wd-ringb" style="--t:44%; --l:4%;  --s:clamp(70px,8vw,110px)"  aria-hidden="true"></span>
+  <span class="wdec wd-tri"   style="--t:53%; --r:5%;  --s:clamp(24px,2.8vw,40px)" aria-hidden="true"></span>
+  <span class="wdec wd-dots"  style="--t:62%; --r:3%;  --s:clamp(80px,9vw,130px)"  aria-hidden="true"></span>
+  <span class="wdec wd-dot"   style="--t:71%; --l:5%;  --s:clamp(18px,2.2vw,30px)" aria-hidden="true"></span>
+  <span class="wdec wd-ring"  style="--t:79%; --r:4%;  --s:clamp(80px,10vw,140px)" aria-hidden="true"></span>
+  <span class="wdec wd-cross" style="--t:88%; --l:3%;  --s:clamp(22px,2.4vw,34px)" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="no">03 — Works</span>
+      <h2 class="h-sec">Press <span class="sweep">Play</span></h2>
+      <p class="note">Everything below I scripted, shot, cut, or designed myself — campus television and student committees first, then OTT programming, live golf broadcast, brand campaigns, game interfaces, and short-form content that reached millions. Newest work sits at the top. Click any card and it opens right here.</p>
+    </div>
+
+    <div class="filters rv" id="filters" role="tablist" aria-label="Filter works"></div>
+    <div id="cols"></div>
+    <p class="empty" id="empty">No works in this category.</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section--tintY" id="contact" data-no="04" data-name="Contact">
+  <div class="wrap">
+    <span class="no" style="font-family:var(--f-display);font-weight:800;font-size:.8rem;letter-spacing:.12em;color:var(--ink-45)">04 — Contact</span>
+    <h2 class="contact__big rv" style="margin-top:.8rem">Thank<br>you<span>.</span></h2>
+    <p class="ed rv d1" style="margin-top:1.1rem;max-width:44ch">Got a project, an opening, or just want to talk about content? The door is open.</p>
+
+    <div class="cgrid rv d2" id="cgrid"></div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:.65rem;margin-top:2rem" class="rv d3">
+      <a href="mailto:andhikaputradhitya@gmail.com" class="btn btn--b">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        Send an email
+      </a>
+      <button class="btn" id="copyEmail">Copy email</button>
+      <a href="#" id="cvC" target="_blank" rel="noopener" class="btn">Download CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap in">
+    <span>© <span id="yr"></span> Andhika Putradhitya — Portfolio 2023/2026</span>
+    <!-- Penanda versi build. Ada supaya bisa dipastikan file mana yang sedang
+         dibuka — kita sudah mengirim banyak revisi dengan nama file yang sama. -->
+    <span>HTML · CSS · JavaScript · <b id="buildTag">build v18</b></span>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT">
+  <button class="lb__nav p" id="lbP" aria-label="Previous work">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+
+  <div class="lb__box" id="lbBox">
+    <div class="lb__bar">
+      <span class="no" id="lbN">01</span>
+      <span class="t" id="lbT">Title</span>
+      <span class="sp">
+        <button class="ico" id="lbOpen" title="Open in a new tab" aria-label="Open in a new tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        </button>
+        <button class="ico" id="lbX" title="Close (Esc)" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </span>
+    </div>
+
+    <div class="lb__stage" id="lbStage"><div class="ld"><span class="spinner"></span>Loading</div></div>
+
+    <div class="lb__foot">
+      <p id="lbD"></p>
+      <div class="acts">
+        <button class="btn" id="lbCopy">Copy link</button>
+        <button class="btn btn--b" id="lbNextBtn">Next work →</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="lb__nav n" id="lbN2" aria-label="Next work">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<!-- ===== EXPERIENCE DETAIL PANEL ===== -->
+<div class="xpp" id="xpp" role="dialog" aria-modal="true" aria-labelledby="xppOrg">
+  <div class="xpp__box" id="xppBox">
+    <button class="ico xpp__x" id="xppX" title="Close (Esc)" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="xpp__head">
+      <span class="xpp__period" id="xppPeriod"></span>
+      <span class="xpp__tag" id="xppTag"></span>
+    </div>
+    <h3 id="xppOrg"></h3>
+    <div class="xpp__role" id="xppRole"></div>
+    <div class="xpp__sub" id="xppSub"></div>
+    <ul id="xppPoints"></ul>
+    <div class="xpp__foot">
+      <button class="btn" id="xppPrev">← Previous role</button>
+      <span class="xpp__count" id="xppCount"></span>
+      <button class="btn btn--b" id="xppNext">Next role →</button>
+    </div>
+  </div>
+</div>
+
+<button class="top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
