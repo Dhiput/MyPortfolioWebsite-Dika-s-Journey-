@@ -1,4 +1,4 @@
-# Website Portfolio Andhika Putradhitya — v16
+# Website Portfolio Andhika Putradhitya — v19
 
 ## Isi paket
 
@@ -21,6 +21,115 @@ Jangan seret `index.html` saja — videonya tidak akan ikut dan showreel-nya kos
 
 
 
+
+
+
+
+## Perubahan v19
+
+**Lokasi dipersingkat** dari "Pancoran Mas, Depok, West Java 16433" jadi
+**"Depok, West Java"** — di kartu kontak dan di data terstruktur Schema.org.
+
+Kelurahan dan kode pos ikut dibuang dari blok JSON-LD di `<head>` karena
+alasan yang sama dengan nomor telepon di v18: bagian itu tidak terlihat mata
+tapi justru yang dipanen mesin. Kalau hanya kartunya yang diperpendek, alamat
+lengkapnya tetap terbuka untuk crawler.
+
+Efek sampingnya bagus: nilainya sekarang di bawah 22 karakter, jadi tidak lagi
+kena kelas `.citem--long` dan tampil satu baris dengan ukuran huruf penuh —
+sebelumnya pecah jadi dua baris.
+
+Sisa "Pancoran": **0** · sisa "16433": **0**
+
+## Perubahan v18
+
+1. **#CariMukaLo tersambung ke videonya.** Sebelumnya entri ini bertipe
+   `gallery` tanpa tautan apa pun — kartunya bisa diklik tapi tidak membuka
+   apa-apa selain gambar diam. Sekarang bertipe `drive` dan membuka video
+   yang sesuai, sama seperti karya video lainnya. Diuji: lightbox terbuka
+   dengan iframe yang benar, dan file Drive-nya dipastikan bisa diakses
+   publik (HTTP 200, terbaca sebagai MP4).
+2. **Nomor telepon dihapus seluruhnya.** Bukan hanya kartu WhatsApp di bagian
+   kontak, tapi juga `PROFILE.phone`, `PROFILE.phoneRaw`, dan field
+   `telephone` di dalam data terstruktur Schema.org di `<head>`.
+
+### Kenapa yang di Schema.org juga harus dihapus
+
+Menghapus kartu WhatsApp saja tidak cukup. Nomor itu masih tertulis di blok
+JSON-LD di dalam `<head>` — tidak terlihat mata, tapi justru **itu yang dibaca
+mesin**: crawler, scraper, dan pengindeks. Blok itu ada supaya Google
+mengenali halaman ini sebagai profil orang, jadi apa pun yang ditaruh di sana
+memang dimaksudkan untuk dipanen.
+
+Diuji: `0` kemunculan nomor di seluruh berkas, tidak ada tautan `tel:`, dan
+kartu kontak tersisa **5** (Email, LinkedIn, Instagram, TikTok, Based in).
+
+Sekalian: poster PDF lokal milik #CariMukaLo ikut dibuang karena thumbnail
+Drive sudah menanganinya — berkasnya menyusut **32 KB**.
+
+## Perubahan v17
+
+1. **Semua efek kursor dihapus** — cursor trail (14 bulatan pengikut), cursor
+   ring, dan parallaks foto yang mengikuti gerak mouse. CSS, JS, dan
+   pemanggilnya dibuang; sisa referensi **nol**.
+2. **Tombol Motion di header** — satu tombol untuk menyalakan/mematikan seluruh
+   animasi, pilihannya disimpan dan bertahan setelah halaman dimuat ulang.
+3. **Pemberitahuan sekali** untuk pengunjung yang sistemnya meminta kurangi
+   gerak, supaya situs yang membeku tidak disangka rusak.
+
+## Kenapa animasinya jalan di MacBook tapi mati di laptop Windows
+
+Bukan karena browser atau kodenya berbeda. Penyebabnya satu setelan sistem.
+
+Situs ini menghormati `prefers-reduced-motion` — standar aksesibilitas yang
+mematikan animasi untuk orang yang terganggu oleh gerakan (vertigo, migrain,
+mabuk gerak). Ketika browser melaporkan `reduce`, seluruh animasi dekoratif
+dimatikan.
+
+Bedanya:
+
+- **macOS** — "Reduce motion" ada di Accessibility, mati secara bawaan, dan
+  hampir tidak pernah dinyalakan. Jadi situsnya hidup.
+- **Windows** — "Animation effects" (Settings → Accessibility → Visual
+  effects) sering mati karena **Battery Saver** atau setelan bawaan pabrik
+  laptop. Browser lalu melaporkan `reduce`, dan situsnya membeku.
+
+Sudah diuji dengan mengemulasi kedua kondisi. Hasil sebelum perbaikan:
+
+| Kondisi | Hiasan hero | Bentuk showreel |
+|---|---|---|
+| `no-preference` (Mac) | `hdFloat` berjalan | `rbFloat` berjalan |
+| `reduce` (Windows) | `none` | `none` |
+
+### Solusinya
+
+Mematikan dukungan `prefers-reduced-motion` bukan pilihan — itu setelan
+aksesibilitas sungguhan, dan ada orang yang benar-benar membutuhkannya.
+Jadi yang ditambahkan adalah **jalan keluar bagi pengunjung**.
+
+Semua aturan reduced-motion (11 blok) dipindah ke satu `<style id="rmGuard">`
+terpisah. Stylesheet itu bisa dimatikan seluruhnya lewat satu baris
+(`rmGuard.disabled = true`), sehingga animasi bisa dipaksa menyala tanpa perlu
+menulis ulang satu per satu aturannya.
+
+Di sisi JS, pertanyaan "boleh beranimasi?" dulu dijawab di enam tempat
+terpisah lewat `matchMedia`. Sekarang semuanya lewat satu fungsi `REDUCE()`
+yang membaca `data-motion` pada `<html>`: `auto` (ikut sistem), `on`
+(paksa nyala), `off` (paksa mati). Tanpa penyatuan itu, pilihan pengunjung
+mustahil dihormati di semua tempat sekaligus.
+
+Hasil uji setelah perbaikan:
+
+| Kondisi | Awal | Setelah klik tombol | Setelah reload |
+|---|---|---|---|
+| `reduce` | animasi mati | **menyala** | tetap menyala |
+| `no-preference` | animasi nyala | **mati** | tetap mati |
+
+### Kalau ingin memperbaikinya di Windows itu sendiri
+
+Settings → Accessibility → Visual effects → **Animation effects: On**.
+Perlu juga memastikan Battery Saver tidak menyala, karena Battery Saver
+mematikan animasi walau setelan di atas sudah On.
 
 ## Perubahan v16
 
